@@ -11,16 +11,6 @@ class Sub_category(models.Model):
     def __str__(self):
         return self.name 
 
-
-
-class Card(models.Model):
-    plastic_name = models.CharField(max_length = 250)
-    
-    
-    def __str__(self):
-        return self.plastic_name 
-
-
 class Consumption(models.Model):
     CONSUPTION_CHOISES_FIELD = [
         (1, 'not_gived'),
@@ -37,6 +27,14 @@ class Consumption(models.Model):
     date = models.DateField( auto_now_add = True )
     def __str__(self):
         return self.name
+
+
+class Card(models.Model):
+    plastic_name = models.CharField(max_length = 250)
+    
+    
+    def __str__(self):
+        return self.plastic_name 
 
 
 

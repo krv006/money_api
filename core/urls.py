@@ -3,9 +3,10 @@ from .views import *
 
 
 urlpatterns = [
+
     path('categories/', CategoryListAPIView.as_view(), name='category-list'),
     path('categories/<int:pk>/', CategoryRetrieveUpdateDestroyAPIView.as_view(), name='category-detail'),
-    
+
     path('card/', CardListAPIView.as_view(), name='card-list'),
     path('card/<int:pk>/', CardRetrieveUpdateDestroyAPIView.as_view(), name='card-detail'),
 
