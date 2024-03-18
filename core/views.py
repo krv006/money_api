@@ -2,7 +2,6 @@ from django.shortcuts import render
 from rest_framework.response import Response 
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-
 from .models import Category, Card, Sub_category, Consumption
 from .serializers import CategorySerializer, CardSerializer, Sub_categorySerializer, ConsumptionSerializer
 # from .serializers import 

@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 
-
-
-
 class Sub_category(models.Model):
     name = models.CharField(max_length = 250)
     
     def __str__(self):
         return self.name 
+    
+    class Meta:
+        app_label = 'rv'
 
 class Consumption(models.Model):
     CONSUPTION_CHOISES_FIELD = [
@@ -25,13 +25,14 @@ class Consumption(models.Model):
     time = models.TimeField(auto_now_add = False, null=True)
     status = models.IntegerField(choices=CONSUPTION_CHOISES_FIELD, default=1)
     date = models.DateField( auto_now_add = True )
+    
     def __str__(self):
         return self.name
 
 
+
 class Card(models.Model):
     plastic_name = models.CharField(max_length = 250)
-    
     
     def __str__(self):
         return self.plastic_name 
