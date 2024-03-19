@@ -7,13 +7,7 @@ class Sub_category(models.Model):
     def __str__(self):
         return self.name 
 
-class Category(models.Model):
-    name = models.CharField(max_length = 250)
-    info = models.TextField()    
-    sub_category = models.ManyToManyField(Sub_category)
-    
-    def __str__(self):
-        return self.name
+
 
 class Consumption(models.Model):
     CONSUPTION_CHOISES_FIELD = [
@@ -29,6 +23,14 @@ class Consumption(models.Model):
     time = models.TimeField(auto_now_add = False, null=True)
     status = models.IntegerField(choices=CONSUPTION_CHOISES_FIELD, default=1)
     sub_category = models.ForeignKey(Sub_category,on_delete = models.CASCADE)
+    
+    def __str__(self):
+        return self.name
+
+class Category(models.Model):
+    name = models.CharField(max_length = 250)
+    info = models.TextField()    
+    sub_category = models.ManyToManyField(Sub_category)
     
     def __str__(self):
         return self.name

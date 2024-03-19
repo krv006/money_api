@@ -17,7 +17,14 @@ class Sub_categoryRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = Sub_categorySerializer
 
 
+class ConsumptionListAPIView(ListCreateAPIView):
+    queryset = Consumption.objects.all()
+    serializer_class = ConsumptionSerializer
 
+class ConsumptionRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Consumption.objects.all()
+    serializer_class = ConsumptionSerializer
+    
 class CategoryListAPIView(ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -41,10 +48,3 @@ class CardRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 
 
 
-class ConsumptionListAPIView(ListCreateAPIView):
-    queryset = Consumption.objects.all()
-    serializer_class = ConsumptionSerializer
-
-class ConsumptionRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    queryset = Consumption.objects.all()
-    serializer_class = ConsumptionSerializer
