@@ -40,11 +40,11 @@ class Card(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length = 250)
     info = models.TextField()    
-    sub_category = models.ManyToManyField(Sub_category)
+    sub_category = models.ManyToManyField(Sub_category, related_name = "categories")
     
     def __str__(self):
         return self.name
-    
+
 
 
 # class Plastic_card(models.Model):
