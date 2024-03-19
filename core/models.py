@@ -7,9 +7,7 @@ class Sub_category(models.Model):
     
     def __str__(self):
         return self.name 
-    
-    class Meta:
-        app_label = 'rv'
+
 
 class Consumption(models.Model):
     CONSUPTION_CHOISES_FIELD = [
@@ -21,10 +19,10 @@ class Consumption(models.Model):
     name = models.CharField(max_length = 250)
     info = models.TextField(null = True)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
-    sub_category = models.ForeignKey(Sub_category,on_delete = models.CASCADE)
+    date = models.DateField( auto_now_add = True )
     time = models.TimeField(auto_now_add = False, null=True)
     status = models.IntegerField(choices=CONSUPTION_CHOISES_FIELD, default=1)
-    date = models.DateField( auto_now_add = True )
+    sub_category = models.ForeignKey(Sub_category,on_delete = models.CASCADE)
     
     def __str__(self):
         return self.name
