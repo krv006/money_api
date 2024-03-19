@@ -24,7 +24,7 @@ class CardSerializer(serializers.ModelSerializer):
 
 
 class ConsumptionSerializer(serializers.ModelSerializer):
-    sub_category_name = serializers.ReadOnlyField(source='sub_category.name') #
+    sub_category_name = serializers.ReadOnlyField(source='sub_category.name') 
     status_display = serializers.CharField(source='get_status_display') 
     # 1 chisida nomini olish uchun ReadOnlyField ishlatildi
     # 2 chisida CharField status nomini olish uchun ishlatildi
