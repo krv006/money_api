@@ -21,15 +21,7 @@ class Sub_categoryRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 class CategoryListAPIView(ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    # serializer_class = Sub_categoryListAPIView
-    
-    # def get_queryset(self):
-    #     queryset = Category.objects.all()
-    #     category_name = self.request.query_params.get("category_name", None)
 
-    #     if category_name:
-    #         queryset = queryset.filter(category_name = category_name)
-    #     return queryset
 
 class CategoryRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()

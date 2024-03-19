@@ -9,7 +9,7 @@ class Sub_categorySerializer(serializers.ModelSerializer):
 
 class CategorySerializer(serializers.ModelSerializer):
     
-    sub_category = serializers.PrimaryKeyRelatedField(many=True, queryset=Sub_category.objects.all())
+    sub_category = Sub_categorySerializer(many=True)
     
     class Meta :
         model = Category

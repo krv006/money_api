@@ -4,10 +4,16 @@ from django.db import models
 
 class Sub_category(models.Model):
     name = models.CharField(max_length = 250)
-    
     def __str__(self):
         return self.name 
 
+class Category(models.Model):
+    name = models.CharField(max_length = 250)
+    info = models.TextField()    
+    sub_category = models.ManyToManyField(Sub_category)
+    
+    def __str__(self):
+        return self.name
 
 class Consumption(models.Model):
     CONSUPTION_CHOISES_FIELD = [
@@ -34,17 +40,6 @@ class Card(models.Model):
     
     def __str__(self):
         return self.plastic_name 
-
-
-
-class Category(models.Model):
-    name = models.CharField(max_length = 250)
-    info = models.TextField()    
-    sub_category = models.ManyToManyField(Sub_category, related_name = "categories")
-    
-    def __str__(self):
-        return self.name
-
 
 
 # class Plastic_card(models.Model):
