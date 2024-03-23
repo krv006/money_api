@@ -1,0 +1,19 @@
+Qo'shish kerak bolgan narsalar:
+    1. Dollar kursi 
+    2. Chernovki ()
+    3. Vozvrat (Qaytarib olib kelingan productlar)
+    4. Kelish narxi ketish narxi boyicha models yozish yangi 
+
+
+Funksiyalar yozilishi kerak:
+    1. Edit qilinishi kerak bo'lgan narsalar boyicha funksiyalar 
+        1. id sini edit qilish kerak 
+        2. name ni edit qilish kerak
+        3. quantity edit qilish kerak
+
+    2. Dollar kursiga xar bir olingan productlardi bolib foiz da chiqarish kerak
+        1. Xaftalik % (da bolishi kerak) 
+        2. Oylik % (da bolishi kerak) 
+        3. Yillik % (da bolishi kerak) 
+    
+    3. 
