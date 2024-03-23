@@ -1,4 +1,5 @@
 from django.db import models
+from django.db import models as m
 
 # Create your models here.
 
@@ -44,11 +45,28 @@ class Card(models.Model):
         return self.plastic_name 
 
 
-# class Plastic_card(models.Model):
-#     cost = models.IntegerField
-#     Plastic_nmae = models.ForeignKey(Card,on_delete = models.CASCADE )
+class Plastic_card(models.Model):
+    cost = models.IntegerField()
+    Plastic_nmae = models.ForeignKey(Card,on_delete = models.CASCADE )
     
-#     def __str__(self):
-#         return self.cost
-    
-    
+    def __int__(self):
+        return self.cost
+
+
+class Product(m.Model):
+    name = m.CharField(max_length=250)
+    quantity = m.PositiveSmallIntegerField()
+    price = m.DecimalField(max_digits=11, decimal_places=3)
+
+    def __str__(self):
+        return self.name
+
+class Debtors(m.Model):
+    full_name = m.CharField(max_length=250)
+    phone_numuber = m.CharField(max_length=250, blank = True)
+    product = m.ManyToManyField(Product)
+    date = m.DateField(auto_now_add=True)
+    price = m.DecimalField(max_digits=11, decimal_places=3)
+
+    def __str__(self):
+        return self.full_name

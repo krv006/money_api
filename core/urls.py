@@ -16,3 +16,6 @@ urlpatterns = [
     path('consumption/<int:pk>/', ConsumptionRetrieveUpdateDestroyAPIView.as_view(), name='consumption-detail'),
 
 ]
+
+# statistika oy xafta yil oyliklar qilish rasxodlar 
+# rasxodlar 
