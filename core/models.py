@@ -47,7 +47,7 @@ class Card(models.Model):
 
 class Plastic_card(models.Model):
     cost = models.IntegerField()
-    Plastic_nmae = models.ForeignKey(Card,on_delete = models.CASCADE )
+    plastic_name = models.ForeignKey(Card,on_delete = models.CASCADE )
     
     def __int__(self):
         return self.cost

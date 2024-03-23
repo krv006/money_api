@@ -2,9 +2,9 @@ from django.shortcuts import render
 from rest_framework.response import Response 
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from .models import Category, Card, Sub_category, Consumption
+from .models import Category, Card, Sub_category, Consumption, Plastic_card, Product, Debtors
 from .serializers import CategorySerializer, CardSerializer, Sub_categorySerializer, ConsumptionSerializer
-# from .serializers import 
+from .serializers import Plastic_cardSerializer, ProductSerializer, DebtorsSerializer 
 
 
 
@@ -46,5 +46,28 @@ class CardRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 
 
 
+class Plastic_cardListAPIView(ListCreateAPIView):
+    queryset = Plastic_card.objects.all()
+    serializer_class = Plastic_cardSerializer
 
+class Plastic_cardRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Plastic_card.objects.all()
+    serializer_class = Plastic_cardSerializer
+
+
+class ProductListAPIView(ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+class ProductRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+class DebtorsListAPIView(ListCreateAPIView):
+    queryset = Debtors.objects.all()
+    serializer_class = DebtorsSerializer
+
+class DebtorsRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Debtors.objects.all()
+    serializer_class = DebtorsSerializer
 
