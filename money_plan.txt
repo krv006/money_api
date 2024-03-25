@@ -16,4 +16,9 @@ Funksiyalar yozilishi kerak:
         2. Oylik % (da bolishi kerak) 
         3. Yillik % (da bolishi kerak) 
     
-    3. 
+    3. Statistika oy xafta yil oyliklar qilish rasxodlar 
+
+    4. Pul qayerga va qandey kamunal tolovlarga ketkanini yozish 
+        yer soligi, elektr , gaz va boshqalar ga ketkanini yozish uchun
+
+    5.  
