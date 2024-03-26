@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors
+from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors, Workers, Dollars, Camunalca
 
 # Register your models here.
 
@@ -10,3 +10,6 @@ admin.site.register(Sub_category)
 admin.site.register(Plastic_card)
 admin.site.register(Product)
 admin.site.register(Debtors)
+admin.site.register(Workers)
+admin.site.register(Dollars)
+admin.site.register(Camunalca)

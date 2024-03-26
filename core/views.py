@@ -2,9 +2,10 @@ from django.shortcuts import render
 from rest_framework.response import Response 
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from .models import Category, Card, Sub_category, Consumption, Plastic_card, Product, Debtors
+from .models import Category, Card, Sub_category, Consumption, Plastic_card, Product, Debtors, Workers, Dollars, Camunalca
 from .serializers import CategorySerializer, CardSerializer, Sub_categorySerializer, ConsumptionSerializer
 from .serializers import Plastic_cardSerializer, ProductSerializer, DebtorsSerializer 
+from .serializers import WorkersSerializer, DollarsSerializer, CamunalcaSerializer
 
 
 
@@ -71,3 +72,27 @@ class DebtorsRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Debtors.objects.all()
     serializer_class = DebtorsSerializer
 
+class WorkersListAPIView(ListCreateAPIView):
+    queryset = Workers.objects.all()
+    serializer_class = WorkersSerializer
+
+class WorkersRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Workers.objects.all()
+    serializer_class = WorkersSerializer
+
+
+class DollarsListAPIView(ListCreateAPIView):
+    queryset = Dollars.objects.all()
+    serializer_class = DollarsSerializer
+
+class DollarsRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Dollars.objects.all()
+    serializer_class = DollarsSerializer
+
+class CamunalcaListAPIView(ListCreateAPIView):
+    queryset = Camunalca.objects.all()
+    serializer_class = CamunalcaSerializer
+
+class CamunalcaRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Camunalca.objects.all()
+    serializer_class = CamunalcaSerializer

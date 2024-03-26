@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors
+from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors, Workers, Camunalca, Dollars
 
 class Sub_categorySerializer(serializers.ModelSerializer):
 
@@ -51,3 +51,25 @@ class DebtorsSerializer(serializers.ModelSerializer):
     class Meta :
         model = Debtors
         fields = ['full_name', 'phone_numuber', 'product', 'date', 'price']
+    
+
+class WorkersSerializer(serializers.ModelSerializer):
+
+    class Meta :
+        model = Workers
+        fields = ['workers_salary_month', 'workers_salary_weeks', 'workers_salary_days', 'workers_salary_oclocs']
+
+
+class CamunalcaSerializer(serializers.ModelSerializer):
+
+    class Meta :
+        model = Camunalca
+        fields = ['water', 'gas', 'electricity', 'wifi', 'lands' ]
+    
+
+
+class DollarsSerializer(serializers.ModelSerializer):
+
+    class Meta :
+        model = Dollars
+        fields = ['dollar', 'dollar_course']

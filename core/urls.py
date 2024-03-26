@@ -23,6 +23,15 @@ urlpatterns = [
 
     path('debtors/', DebtorsListAPIView.as_view(), name='debtors-list'),
     path('debtors/<int:pk>/', DebtorsRetrieveUpdateDestroyAPIView.as_view(), name='debtors-detail'),
+
+    path('workers/', WorkersListAPIView.as_view(), name='workers-list'),
+    path('workers/<int:pk>/', WorkersRetrieveUpdateDestroyAPIView.as_view(), name='workers-detail'),
+
+    path('dollars/', DollarsListAPIView.as_view(), name='dollars-list'),
+    path('dollars/<int:pk>/', DollarsRetrieveUpdateDestroyAPIView.as_view(), name='dollars-detail'),
+
+    path('camunalca/', CamunalcaListAPIView.as_view(), name='camunalca-list'),
+    path('camunalca/<int:pk>/', CamunalcaRetrieveUpdateDestroyAPIView.as_view(), name='camunalca-detail'),
 ]
 
 # statistika oy xafta yil oyliklar qilish rasxodlar 
