@@ -10,15 +10,17 @@ Funksiyalar yozilishi kerak:
         1. id sini edit qilish kerak 
         2. name ni edit qilish kerak
         3. quantity edit qilish kerak
+        (frontedchi bn qilinadi)
 
     2. Dollar kursiga xar bir olingan productlardi bolib foiz da chiqarish kerak
         1. Xaftalik % (da bolishi kerak) 
         2. Oylik % (da bolishi kerak) 
-        3. Yillik % (da bolishi kerak) 
+        3. Yillik % (da bolishi kerak)
+        4. API ni korish kerak
     
     3. Statistika oy xafta yil oyliklar qilish rasxodlar 
 
-    4. Pul qayerga va qandey kamunal tolovlarga ketkanini yozish 
-        yer soligi, elektr , gaz va boshqalar ga ketkanini yozish uchun
+4. Pul qayerga va qandey kamunal tolovlarga ketkanini yozish 
+    yer soligi, elektr , gaz va boshqalar ga ketkanini yozish uchun
 
-    5.  
+    5.  Optional di korib chiqish 

@@ -28,6 +28,7 @@ class Consumption(models.Model):
     def __str__(self):
         return self.name
 
+
 class Category(models.Model):
     name = models.CharField(max_length = 250)
     info = models.TextField()    
@@ -70,3 +71,31 @@ class Debtors(m.Model):
 
     def __str__(self):
         return self.full_name
+
+
+class Dollars(m.Model):
+    dollar = m.IntegerField()
+    dollar_course = m.IntegerField()
+
+    def __int__(self):
+        return self.dollar
+    
+
+class Camunalca(m.Model):
+    water = m.IntegerField()
+    gas = m.IntegerField()
+    electricity = m.IntegerField()
+    wifi = m.IntegerField()
+    lands = m.IntegerField()    # lands soliqlar
+    
+    def __int__(self):
+        return self.water
+
+class Workers(m.Model):
+    workers_salary_month = m.IntegerField()
+    workers_salary_weeks = m.IntegerField()
+    workers_salary_days = m.IntegerField()
+    workers_salary_oclocs = m.IntegerField()
+
+    def __int__(self):
+        return self.workers_salary_month
