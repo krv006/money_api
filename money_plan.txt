@@ -2,7 +2,7 @@ Qo'shish kerak bolgan narsalar:
     1. Dollar kursi 
     2. Chernovki ()
     3. Vozvrat (Qaytarib olib kelingan productlar)
-    4. Kelish narxi ketish narxi boyicha models yozish yangi 
+    4. Kelish narxi ketish narxi boyicha models yozish yangi        
 
 
 Funksiyalar yozilishi kerak:
@@ -20,7 +20,7 @@ Funksiyalar yozilishi kerak:
     
     3. Statistika oy xafta yil oyliklar qilish rasxodlar 
 
-4. Pul qayerga va qandey kamunal tolovlarga ketkanini yozish 
-    yer soligi, elektr , gaz va boshqalar ga ketkanini yozish uchun
+    4. Pul qayerga va qandey kamunal tolovlarga ketkanini yozish 
+        yer soligi, elektr , gaz va boshqalar ga ketkanini yozish uchun
 
     5.  Optional di korib chiqish 

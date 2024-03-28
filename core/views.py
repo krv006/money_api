@@ -7,7 +7,14 @@ from .serializers import CategorySerializer, CardSerializer, Sub_categorySeriali
 from .serializers import Plastic_cardSerializer, ProductSerializer, DebtorsSerializer 
 from .serializers import WorkersSerializer, DollarsSerializer, CamunalcaSerializer
 
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser, IsAuthenticated
+from rest_framework import generics, viewsets, mixins
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.viewsets import GenericViewSet
 
+from .permissions import IsAdminOrReadOnly
 
 class Sub_categoryListAPIView(ListCreateAPIView):
     queryset = Sub_category.objects.all()
