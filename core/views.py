@@ -7,7 +7,7 @@ from .serializers import CategorySerializer, CardSerializer, Sub_categorySeriali
 from .serializers import Plastic_cardSerializer, ProductSerializer, DebtorsSerializer 
 from .serializers import WorkersSerializer, DollarsSerializer, CamunalcaSerializer
 
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework import generics, viewsets, mixins
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
@@ -66,10 +66,18 @@ class Plastic_cardRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 class ProductListAPIView(ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
 class ProductRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = (IsAuthenticated, )
+
+class ProductRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = (IsAuthenticated, )
+
 
 class DebtorsListAPIView(ListCreateAPIView):
     queryset = Debtors.objects.all()

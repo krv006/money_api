@@ -1,5 +1,7 @@
 from django.db import models
 from django.db import models as m
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -58,6 +60,8 @@ class Product(m.Model):
     name = m.CharField(max_length=250)
     quantity = m.PositiveSmallIntegerField()
     price = m.DecimalField(max_digits=11, decimal_places=3)
+    user = m.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.name

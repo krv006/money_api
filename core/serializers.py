@@ -41,10 +41,11 @@ class Plastic_cardSerializer(serializers.ModelSerializer):
         fields = ['plastic_name', 'cost']
 
 class ProductSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta :
         model = Product
-        fields = ['name', 'quantity', 'price']
+        fields = ['name', 'quantity', 'price', 'user']
 
 class DebtorsSerializer(serializers.ModelSerializer):
 
