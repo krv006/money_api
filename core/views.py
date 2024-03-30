@@ -71,12 +71,13 @@ class ProductListAPIView(ListCreateAPIView):
 class ProductRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAdminOrReadOnly, )
 
 class ProductRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAdminOrReadOnly, )
+    
 
 
 class DebtorsListAPIView(ListCreateAPIView):
