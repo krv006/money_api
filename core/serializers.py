@@ -76,15 +76,15 @@ class DollarsSerializer(serializers.ModelSerializer):
         fields = ['dollar', 'dollar_course']
 
 
-# class DepartmentSerializer(serializers.ModelSerializer):
+class DepartmentSerializer(serializers.ModelSerializer):
 
-#     class Meta :
-#         model = Department
-#         fields = ['name', 'is_active']
+    class Meta :
+        model = Department
+        fields = ['name', 'is_active']
 
-# class EmployeeSerializer(serializers.ModelSerializer):
-#     department_name = serializers.ReadOnlyField(source='department.name') 
-#     # department ni name ni olindi
-#     class Meta :
-#         model = Employee
-#         fields = ['name', 'department_name']
+class EmployeeSerializer(serializers.ModelSerializer):
+    department_name = serializers.ReadOnlyField(source='department.name') 
+    # department ni name ni olindi
+    class Meta :
+        model = Employee
+        fields = ['name', 'department_name']
