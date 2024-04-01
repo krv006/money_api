@@ -3,11 +3,11 @@ from .views import *
 
 urlpatterns = [
 
-    # path('department/', DepartmentListAPIView.as_view(), name='department-list'),
-    # path('department/<int:pk>/', DepartmentRetrieveUpdateDestroyAPIView.as_view(), name='department-detail'),
+    path('department/', DepartmentListAPIView.as_view(), name='department-list'),
+    path('department/<int:pk>/', DepartmentRetrieveUpdateDestroyAPIView.as_view(), name='department-detail'),
 
-    # path('employee/', EmployeeListAPIView.as_view(), name='employee-list'),
-    # path('employee/<int:pk>/', EmployeeRetrieveUpdateDestroyAPIView.as_view(), name='employee-detail'),
+    path('employee/', EmployeeListAPIView.as_view(), name='employee-list'),
+    path('employee/<int:pk>/', EmployeeRetrieveUpdateDestroyAPIView.as_view(), name='employee-detail'),
 
     path('categories/', CategoryListAPIView.as_view(), name='categories-list'),
     path('categories/<int:pk>/', CategoryRetrieveUpdateDestroyAPIView.as_view(), name='categories-detail'),
