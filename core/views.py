@@ -53,23 +53,23 @@ class CardRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = CardSerializer
 
 
-# class DepartmentListAPIView(ListCreateAPIView):
-#     queryset = Department.objects.all()
-#     serializer_class = DepartmentSerializer
+class DepartmentListAPIView(ListCreateAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
 
-# class DepartmentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-#     queryset = Department.objects.all()
-#     serializer_class = DepartmentSerializer
+class DepartmentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
 
 
 
-# class EmployeeListAPIView(ListCreateAPIView):
-#     queryset = Employee.objects.all()
-#     serializer_class = EmployeeSerializer
+class EmployeeListAPIView(ListCreateAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
-# class EmployeeRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-#     queryset = Employee.objects.all()
-#     serializer_class = EmployeeSerializer
+class EmployeeRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
 
 
