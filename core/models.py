@@ -103,3 +103,12 @@ class Workers(m.Model):
 
     def __int__(self):
         return self.workers_salary_month
+
+
+class Department(m.Model):
+    name = m.CharField(max_length = 50)
+    is_active = m.BooleanField(default = True)
+
+class Employee(m.Model):
+    name = m.CharField(max_length = 100)
+    department = m.ForeignKey(Department, on_delete = models.CASCADE, limit_choices_to = { 'is_active' : True})

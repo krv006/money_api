@@ -3,6 +3,12 @@ from .views import *
 
 urlpatterns = [
 
+    # path('department/', DepartmentListAPIView.as_view(), name='department-list'),
+    # path('department/<int:pk>/', DepartmentRetrieveUpdateDestroyAPIView.as_view(), name='department-detail'),
+
+    # path('employee/', EmployeeListAPIView.as_view(), name='employee-list'),
+    # path('employee/<int:pk>/', EmployeeRetrieveUpdateDestroyAPIView.as_view(), name='employee-detail'),
+
     path('categories/', CategoryListAPIView.as_view(), name='categories-list'),
     path('categories/<int:pk>/', CategoryRetrieveUpdateDestroyAPIView.as_view(), name='categories-detail'),
 
@@ -21,7 +27,7 @@ urlpatterns = [
     path('product/', ProductListAPIView.as_view(), name='product-list'),
     path('product/<int:pk>/', ProductRetrieveUpdateDestroyAPIView.as_view(), name='product-detail'),
     # path('productdelete/<int:pk>/', ProductRetrieveUpdateDestroyAPIView.as_view(), name='product-detail'),
-
+    # delete ni korib chiqish kerak ertaga shamshod bilan 
 
     path('debtors/', DebtorsListAPIView.as_view(), name='debtors-list'),
     path('debtors/<int:pk>/', DebtorsRetrieveUpdateDestroyAPIView.as_view(), name='debtors-detail'),

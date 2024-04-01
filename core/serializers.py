@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors, Workers, Camunalca, Dollars
+from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors, Workers, Camunalca, Dollars, Department, Employee
 
 class Sub_categorySerializer(serializers.ModelSerializer):
 
@@ -8,7 +8,7 @@ class Sub_categorySerializer(serializers.ModelSerializer):
         fields = ['name']
 
 class CategorySerializer(serializers.ModelSerializer):
-    
+
     sub_category = Sub_categorySerializer(many=True)
     
     class Meta :
@@ -52,7 +52,7 @@ class DebtorsSerializer(serializers.ModelSerializer):
     class Meta :
         model = Debtors
         fields = ['full_name', 'phone_numuber', 'product', 'date', 'price']
-    
+
 
 class WorkersSerializer(serializers.ModelSerializer):
 
@@ -66,7 +66,7 @@ class CamunalcaSerializer(serializers.ModelSerializer):
     class Meta :
         model = Camunalca
         fields = ['water', 'gas', 'electricity', 'wifi', 'lands' ]
-    
+
 
 
 class DollarsSerializer(serializers.ModelSerializer):
@@ -74,3 +74,17 @@ class DollarsSerializer(serializers.ModelSerializer):
     class Meta :
         model = Dollars
         fields = ['dollar', 'dollar_course']
+
+
+# class DepartmentSerializer(serializers.ModelSerializer):
+
+#     class Meta :
+#         model = Department
+#         fields = ['name', 'is_active']
+
+# class EmployeeSerializer(serializers.ModelSerializer):
+#     department_name = serializers.ReadOnlyField(source='department.name') 
+#     # department ni name ni olindi
+#     class Meta :
+#         model = Employee
+#         fields = ['name', 'department_name']
