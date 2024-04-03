@@ -24,3 +24,13 @@ Funksiyalar yozilishi kerak:
         yer soligi, elektr , gaz va boshqalar ga ketkanini yozish uchun
 
     5.  Optional di korib chiqish 
+
+camunalca ga ulash uchun 
+    TYPE = [
+        (1, 'gas'),
+        (2, 'electracity'),
+        (3, 'water'),
+        (4, 'wifi'),
+        (4, 'wifi'),
+        (5, 'lands'),
+    ]

@@ -19,6 +19,14 @@ class Consumption(models.Model):
         (3, 'not_paid'),
         (4, 'pending'),
     ]
+    TYPES_CAMUNALCA = [
+        (1,'gas'),
+        (2,'electracity'),
+        (3,'lands'),
+        (4,'water'),
+        (5,'wifi'),
+        (6, 'not_gived'),
+    ]
     name = models.CharField(max_length = 250)
     info = models.TextField(null = True)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
@@ -26,7 +34,8 @@ class Consumption(models.Model):
     time = models.TimeField(auto_now_add = False, null=True)
     status = models.IntegerField(choices=CONSUPTION_CHOISES_FIELD, default=1)
     sub_category = models.ForeignKey(Sub_category,on_delete = models.CASCADE)
-    
+    types_camunalca = models.IntegerField(choices=TYPES_CAMUNALCA, default=6)
+
     def __str__(self):
         return self.name
 
