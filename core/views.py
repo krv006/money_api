@@ -17,6 +17,14 @@ from rest_framework.views import APIView
 from rest_framework.viewsets import GenericViewSet
 
 from .permissions import IsAdminOrReadOnly
+from rest_framework.pagination import PageNumberPagination
+
+
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
 
 class Sub_categoryListAPIView(ListCreateAPIView):
     queryset = Sub_category.objects.all()
@@ -38,6 +46,9 @@ class ConsumptionRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 class CategoryListAPIView(ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    pagination_class = CustomPageNumberPagination
+
+
 
 
 class CategoryRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
@@ -90,6 +101,7 @@ class ProductListAPIView(ListCreateAPIView):
     serializer_class = ProductSerializer
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
+
 class ProductRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
@@ -129,7 +141,7 @@ class DollarsRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 
 class CamunalcaListAPIView(ListCreateAPIView):
     queryset = Camunalca.objects.all()
-    serializer_class = CamunalcaSerializer
+    serializer_class = CamunalcaSerializer(queryset, many = True)
 
 class CamunalcaRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Camunalca.objects.all()

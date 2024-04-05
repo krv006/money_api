@@ -78,7 +78,7 @@ class Product(m.Model):
 class Debtors(m.Model):
     full_name = m.CharField(max_length=250)
     phone_numuber = m.CharField(max_length=250, blank = True)
-    product = m.ManyToManyField(Product)
+    product = m.ManyToManyField(Product, blank=True)
     date = m.DateField(auto_now_add=True)
     price = m.DecimalField(max_digits=11, decimal_places=3)
 
@@ -92,7 +92,7 @@ class Dollars(m.Model):
 
     def __int__(self):
         return self.dollar
-    
+
 
 class Camunalca(m.Model):
     water = m.IntegerField()
