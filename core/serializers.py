@@ -89,3 +89,52 @@ class EmployeeSerializer(serializers.ModelSerializer):
     class Meta :
         model = Employee
         fields = ['name', 'department_name']
+
+
+
+# from pydantic import SecretStr, BaseModel, ValidationError
+# from pydantic import field_validator, field_serializer
+
+
+# class User(BaseModel):
+#     first_name: str
+#     last_name: str
+#     password: SecretStr
+#     age: int | None = None
+#     ball: int | None = 25
+#     email: str
+
+
+
+#     @field_validator('email')
+#     @classmethod
+#     def validate_email(cls, value: str) -> str:
+#         if not value.endswith('@gmail.com') and value == "!,#,$,%,%,^,&,*,(,),_,+,-,+,_":
+#             raise ValidationError('Your email invalid')
+#         return value
+
+#     @field_validator('first_name', 'last_name')
+#     @classmethod
+#     def validate_username(cls, value):
+#         if not value.isalpha():
+#             raise ValidationError('Last_name yoki first name faqat harflardan iborat bolishi mumkin')
+#         return value
+
+#     @field_serializer('password')
+#     def dum_secret(self, value):
+#         return value.get_secret_value()
+
+
+# # user1 = User(username="test", password="12345678", age=18)
+
+# menu = '''
+# 1. register
+#     username, password, first_name 
+# 2. login
+#     username, password
+
+# 0. exit
+# '''
+# print(menu)
+# users: list[User] = []
+
