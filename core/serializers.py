@@ -138,3 +138,32 @@ class EmployeeSerializer(serializers.ModelSerializer):
 # print(menu)
 # users: list[User] = []
 
+# if __name__ == '__main__':
+#     while True:
+#         choice = input('Enter your choice: ')
+#         if choice == '1':
+#             username = input('Enter your username: ')
+#             password = SecretStr(input('Enter your password: '))
+#             email = input('Enter your email: ')
+#             age = int(input('Enter your age: '))
+#             ball = int(input('Enter your ball: '))
+#             user = User(username=username, password=password, email=email, age=age, ball=ball)
+#             users.append(user)
+#             print("Registered user")
+#             print(user)
+
+#         elif choice == '2':
+#             username = input('Enter your username: ')
+#             password = SecretStr(input('Enter your password: '))
+#             for i in users:
+#                 if i.username == username and i.password == password:
+#                     print("You are registred")
+#                     break
+#                 else:
+#                     print("Invalid username or password")
+#                     break
+#             else:
+#                 print("User name not found")
+#         elif choice == '3':
+#             print('exit')
+#             break
