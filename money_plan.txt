@@ -34,5 +34,3 @@ camunalca ga ulash uchun
         (4, 'wifi'),
         (5, 'lands'),
     ]
-
-Pydamic data qoshish 
