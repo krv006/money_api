@@ -1,5 +1,10 @@
 from django.urls import path
-from .views import *
+from .views import ParentCategoryListAPIView, ParentCategoryRetrieveUpdateDestroyAPIView,DepartmentListAPIView, DepartmentRetrieveUpdateDestroyAPIView
+from .views import EmployeeListAPIView, EmployeeRetrieveUpdateDestroyAPIView, CardListAPIView, CardRetrieveUpdateDestroyAPIView, Sub_categoryListAPIView, Sub_categoryRetrieveUpdateDestroyAPIView
+from .views import CategoryListAPIView, CategoryRetrieveUpdateDestroyAPIView, ConsumptionListAPIView, ConsumptionRetrieveUpdateDestroyAPIView
+from .views import Plastic_cardListAPIView, Plastic_cardRetrieveUpdateDestroyAPIView, ProductListAPIView, ProductRetrieveUpdateDestroyAPIView, DebtorsListAPIView, DebtorsRetrieveUpdateDestroyAPIView
+from .views import WorkersListAPIView, WorkersRetrieveUpdateDestroyAPIView, DollarsListAPIView, DollarsRetrieveUpdateDestroyAPIView
+from .views import CamunalcaListAPIView, CamunalcaRetrieveUpdateDestroyAPIView
 
 urlpatterns = [
 
