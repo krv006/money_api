@@ -3,11 +3,11 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .models import Category, Card, Sub_category, Consumption, Plastic_card, Product, Debtors, Workers, Dollars, Camunalca
-from .models import  Department, Employee
+from .models import  Department, Employee, ParentCategory
 from .serializers import CategorySerializer, CardSerializer, Sub_categorySerializer, ConsumptionSerializer
 from .serializers import Plastic_cardSerializer, ProductSerializer, DebtorsSerializer 
 from .serializers import WorkersSerializer, DollarsSerializer, CamunalcaSerializer
-from .serializers import DepartmentSerializer, EmployeeSerializer
+from .serializers import DepartmentSerializer, EmployeeSerializer, ParentCategorySerializer
 
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework import generics, viewsets, mixins
@@ -18,6 +18,16 @@ from rest_framework.viewsets import GenericViewSet
 
 from .permissions import IsAdminOrReadOnly
 from rest_framework.pagination import PageNumberPagination
+
+
+# class ParentCategoryListAPIView(generics.ListCreateAPIView):
+#     queryset = ParentCategory.objects.all()
+#     serializer_class = ParentCategorySerializer
+
+
+# class ParentCategoryRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = ParentCategory.objects.all()
+#     serializer_class = ParentCategorySerializer
 
 
 class CustomPageNumberPagination(PageNumberPagination):

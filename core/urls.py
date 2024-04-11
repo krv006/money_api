@@ -3,6 +3,9 @@ from .views import *
 
 urlpatterns = [
 
+    path('parentcategory/', ParentCategoryListAPIView.as_view(), name='category-list-create'),
+    path('parentcategory/<int:pk>/', ParentCategoryRetrieveUpdateDestroyAPIView.as_view(), name='category-retrieve-update-destroy'),
+
     path('department/', DepartmentListAPIView.as_view(), name='department-list'),
     path('department/<int:pk>/', DepartmentRetrieveUpdateDestroyAPIView.as_view(), name='department-detail'),
 

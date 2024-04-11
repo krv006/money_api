@@ -5,6 +5,12 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class ParentCategory(m.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
 class Sub_category(models.Model):
     name = models.CharField(max_length = 250)
     def __str__(self):

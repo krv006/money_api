@@ -1,12 +1,20 @@
 from rest_framework import serializers
 from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors, Workers, Camunalca, Dollars 
-from .models import Department, Employee
+from .models import Department, Employee, ParentCategory
+
+
+# class ParentCategorySerializer(serializers.ModelSerializer):
+
+#     class Meta :
+#         model = ParentCategory
+#         fields = ['id','name']
+
 
 class Sub_categorySerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Sub_category
-        fields = ['name']
+        fields = ['id', 'name']
 
 class CategorySerializer(serializers.ModelSerializer):
 
@@ -14,14 +22,14 @@ class CategorySerializer(serializers.ModelSerializer):
     
     class Meta :
         model = Category
-        fields = ['name', 'info', 'sub_category']
+        fields = ['id', 'name', 'info', 'sub_category']
 
 
 class CardSerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Card
-        fields = ['plastic_name']
+        fields = ['id', 'plastic_name']
 
 
 class ConsumptionSerializer(serializers.ModelSerializer):
@@ -32,41 +40,41 @@ class ConsumptionSerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Consumption
-        fields = ['name', 'info', 'cost', 'sub_category_name', 'time', 'status_display', 'date', 'types_camunalca']
+        fields = ['id', 'name', 'info', 'cost', 'sub_category_name', 'time', 'status_display', 'date', 'types_camunalca']
 
 
 class Plastic_cardSerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Plastic_card
-        fields = ['plastic_name', 'cost']
+        fields = ['id', 'plastic_name', 'cost']
 
 class ProductSerializer(serializers.ModelSerializer):
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta :
         model = Product
-        fields = ['name', 'quantity', 'price', 'user']
+        fields = ['id', 'name', 'quantity', 'price', 'user']
 
 class DebtorsSerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Debtors
-        fields = ['full_name', 'phone_numuber', 'product', 'date', 'price']
+        fields = ['id', 'full_name', 'phone_numuber', 'product', 'date', 'price']
 
 
 class WorkersSerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Workers
-        fields = ['workers_salary_month', 'workers_salary_weeks', 'workers_salary_days', 'workers_salary_oclocs']
+        fields = ['id', 'workers_salary_month', 'workers_salary_weeks', 'workers_salary_days', 'workers_salary_oclocs']
 
 
 class CamunalcaSerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Camunalca
-        fields = ['water', 'gas', 'electricity', 'wifi', 'lands' ]
+        fields = ['id', 'water', 'gas', 'electricity', 'wifi', 'lands' ]
 
 
 
@@ -74,21 +82,21 @@ class DollarsSerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Dollars
-        fields = ['dollar', 'dollar_course']
+        fields = ['id', 'dollar', 'dollar_course']
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Department
-        fields = ['name', 'is_active']
+        fields = ['id', 'name', 'is_active']
 
 class EmployeeSerializer(serializers.ModelSerializer):
     department_name = serializers.ReadOnlyField(source='department.name') 
     # department ni name ni olindi
     class Meta :
         model = Employee
-        fields = ['name', 'department_name']
+        fields = ['id', 'name', 'department_name']
 
 
 
