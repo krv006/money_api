@@ -20,14 +20,14 @@ from .permissions import IsAdminOrReadOnly
 from rest_framework.pagination import PageNumberPagination
 
 
-# class ParentCategoryListAPIView(generics.ListCreateAPIView):
-#     queryset = ParentCategory.objects.all()
-#     serializer_class = ParentCategorySerializer
+class ParentCategoryListAPIView(generics.ListCreateAPIView):
+    queryset = ParentCategory.objects.all()
+    serializer_class = ParentCategorySerializer
 
 
-# class ParentCategoryRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = ParentCategory.objects.all()
-#     serializer_class = ParentCategorySerializer
+class ParentCategoryRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ParentCategory.objects.all()
+    serializer_class = ParentCategorySerializer
 
 
 class CustomPageNumberPagination(PageNumberPagination):

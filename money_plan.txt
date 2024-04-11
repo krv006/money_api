@@ -34,3 +34,10 @@ camunalca ga ulash uchun
         (4, 'wifi'),
         (5, 'lands'),
     ]
+
+
+Qo'shimcha topshiriqlar :
+    xamma models larga id ulandi endi shu id lardi xammasini korish kerak
+    productlar va categorylarga ?category_id = 1 va shunga oxshash params, queryset lardi yozish
+    agar qolimdan kelsa yana boshqa funksiyalar o'rganib qo'shish kerak 
+    git ga ertaga qoyish kerak 
