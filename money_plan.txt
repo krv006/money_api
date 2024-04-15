@@ -37,7 +37,7 @@ camunalca ga ulash uchun
 
 
 Qo'shimcha topshiriqlar :
-    xamma models larga id ulandi endi shu id lardi xammasini korish kerak
-    productlar va categorylarga ?category_id = 1 va shunga oxshash params, queryset lardi yozish
+    xamma models larga id ulandi endi shu id lardi xammasini korish kerak (bu boldi)
+    productlar va categorylarga ?category_id = 1 va shunga oxshash params, queryset lardi yozish (buni 13 chiga qilib chiqish kerak)
     agar qolimdan kelsa yana boshqa funksiyalar o'rganib qo'shish kerak 
     git ga ertaga qoyish kerak 

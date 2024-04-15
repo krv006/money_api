@@ -3,11 +3,11 @@ from .models import Category, Card, Consumption, Sub_category, Plastic_card, Pro
 from .models import Department, Employee, ParentCategory
 
 
-# class ParentCategorySerializer(serializers.ModelSerializer):
+class ParentCategorySerializer(serializers.ModelSerializer):
 
-#     class Meta :
-#         model = ParentCategory
-#         fields = ['id','name']
+    class Meta :
+        model = ParentCategory
+        fields = ['id','name']
 
 
 class Sub_categorySerializer(serializers.ModelSerializer):
