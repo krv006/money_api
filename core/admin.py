@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors, Workers, Dollars, Camunalca, Department, Employee
-
+from .models import ParentCategory
 # Register your models here.
 
 admin.site.register(Category)
@@ -15,3 +15,4 @@ admin.site.register(Dollars)
 admin.site.register(Camunalca)
 admin.site.register(Department)
 admin.site.register(Employee)
+admin.site.register(ParentCategory)

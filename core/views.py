@@ -21,8 +21,15 @@ from rest_framework.pagination import PageNumberPagination
 
 
 class ParentCategoryListAPIView(generics.ListCreateAPIView):
-    queryset = ParentCategory.objects.all()
     serializer_class = ParentCategorySerializer
+
+    def get_queryset(self):
+        queryset = ParentCategory.objects.all()
+        parent_id = self.request.query_params.get('parent_id', None)
+
+        if parent_id:
+            queryset = queryset.filter(parent_id=parent_id)
+
 
 
 class ParentCategoryRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
