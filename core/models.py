@@ -39,7 +39,7 @@ class Consumption(models.Model):
     date = models.DateField( auto_now_add = True )
     time = models.TimeField(auto_now_add = False, null=True)
     status = models.IntegerField(choices=CONSUPTION_CHOISES_FIELD, default=1)
-    sub_category = models.ForeignKey(Sub_category,on_delete = models.CASCADE)
+    sub_category = models.ForeignKey(Sub_category,on_delete = models.CASCADE, blank=True)
     types_camunalca = models.IntegerField(choices=TYPES_CAMUNALCA, default=6)
 
     def __str__(self):
@@ -50,7 +50,8 @@ class Category(models.Model):
     name = models.CharField(max_length = 250)
     info = models.TextField()    
     sub_category = models.ManyToManyField(Sub_category)
-    
+    # parent_category = models.ForeignKey(ParentCategory, on_delete=models.CASCADE, blank=True)
+
     def __str__(self):
         return self.name
 
