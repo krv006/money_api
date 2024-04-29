@@ -1,3 +1,5 @@
+from decimal import Decimal
+import requests
 from rest_framework import serializers
 from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors, Workers, Camunalca, Dollars 
 from .models import Department, Employee, ParentCategory
@@ -56,10 +58,32 @@ class Plastic_cardSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    price_usd = serializers.SerializerMethodField()
+    price_uzs = serializers.SerializerMethodField()
 
-    class Meta :
+    class Meta:
         model = Product
-        fields = ['id', 'name', 'quantity', 'price', 'user']
+        fields = ['id', 'name', 'quantity', 'price_usd', 'price_uzs', 'user']
+
+    def get_price_usd(self, obj):
+        amount = Decimal(obj.price)
+        from_currency = 'USD'
+        to_currency = 'UZS'  
+        conversion_rate = self.get_conversion_rate(from_currency, to_currency)
+        if conversion_rate is None:
+            return None
+        converted_amount = amount / Decimal(conversion_rate)
+        return converted_amount
+
+    def get_price_uzs(self, obj):
+        return obj.price
+
+    def get_conversion_rate(self, from_currency, to_currency):
+        API_ENDPOINT = "https://v6.exchangerate-api.com/v6/0f84fd60fa278bb9b3c8e126/latest/{}".format(from_currency)
+        response = requests.get(API_ENDPOINT)
+        data = response.json()
+        return Decimal(data['conversion_rates'].get(to_currency, 0))
+
 
 class DebtorsSerializer(serializers.ModelSerializer):
 
